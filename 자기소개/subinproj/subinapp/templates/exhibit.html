@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exhibit</title>
+</head>
+<style>
+p{
+    position: absolute;
+    width: 307px;
+    height: 34px;
+    left: 140px;
+    top: 130px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    
+    color: #000000;
+}
+.square{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    left: 110px;
+    top: 200px;
+    
+    background: #fdf6ef;
+    border-radius: 28px;
+}
+#two{
+    left: 545px;
+    top: 200px;
+
+}
+#three{
+    left: 980px;
+    top: 200px;
+
+}
+#four{
+    top: 730px;
+
+}
+.img{
+    position: absolute;
+    left: 77px;
+    top: 70px;
+
+    width: 250px;
+}
+#ratio{
+    width: 250px;
+}
+
+.title{
+    position: absolute;
+    left: calc(50% - 70px/2);
+    top: 25px;
+
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+
+
+}
+.contents{
+    position: absolute;
+    left: calc(50% - 230px/2);
+    top: 380px;
+
+    font-family: Noto Sans;
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+}
+
+</style>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <p> 📘 EXHIBIT HALL </p>
+    <div class=square>
+        <div class =title>
+            🐕 아토 🐕
+        </div>
+
+        <div class=img>
+            <img src="{% static '아토.jpg' %}" alt="" id="ratio">
+        </div>
+
+        <div class =contents>
+            우리집 강아지 아토야<br>
+            벌써 6살 어른이야 !! 동안이지?:-)<br>
+        
+
+        </div>
+    </div>
+    <div class=square id="two">
+        <div class =title>
+            ☁ 하늘 ☁
+        </div>
+
+        <div class=img>
+            <img src="{% static '하늘.jpg' %}" alt="" id="ratio">
+        </div>
+
+        
+    </div>
+    <div class=square id="three">
+        <div class =title>
+            🥛 음료 🥛
+        </div>
+
+        <div class=img>
+            <img src="{% static '쉐이크.jpg' %}" alt="" id="ratio">
+        </div>
+        <div class =contents>
+            편스토랑에서 본 레시피<br>
+            바나나,블루베리,연두부,바나나,우유<br>
+            추천!!!
+        </div>
+
+    </div>
+
+    <div class=square id="four">
+        <div class =title>
+            🌥 하늘 🌥
+        </div>
+
+        <div class=img>
+            <img src="{% static '하늘2.jpg' %}" alt="" id="ratio">
+        </div>
+
+    </div>
+
+
+    {% endblock %}
+</body>
+</html>

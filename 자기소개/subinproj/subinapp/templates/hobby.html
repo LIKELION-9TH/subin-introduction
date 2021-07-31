@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>hobby</title>
+</head>
+<style>
+
+p{
+    position: absolute;
+    width: 307px;
+    height: 34px;
+    left: 140px;
+    top: 130px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+    
+    color: #000000;
+}
+
+.square{
+    position: absolute;
+    width: 1100px;
+    height: 500px;
+    left: calc(50% - 1100px/2 - 1px);
+
+    background: #fdf6ef;
+    border-radius: 28px;
+}
+#one{
+    top: 200px;
+}
+#two{
+    top: 800px;
+}
+
+
+.contents{
+    position: absolute;
+    width: 500px;
+    height: 261px;
+    left: 540px;
+    top: 200px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 33px;
+    
+    color: black;
+}
+
+.img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 120px;
+    top: 110px;
+}
+#bada{
+    width: 292px;
+    height: 292px;
+}
+#ko{
+    width: 292px;
+    height: 292px;
+}
+.title{
+    position: absolute;
+    width: 528px;
+    height: 67px;
+    left: 420px;
+    top: 120px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 65px;
+    text-align: center;
+    
+}
+
+
+</style>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <p> 📕 MY HOBBY </p>
+    <div class=square id="one">
+        <div class =title>
+            🏋️‍♂️ HEALTHY GIRL🏋️‍♂️
+        </div>
+
+        <div class=img>
+            <img src="{% static '운동.jpg' %}" alt="" id="bada">
+        </div>
+
+        <div class =contents>
+            나의 첫번째 취미는 운동이야 !
+            <br>나는 가만히 있지 못하는 타입이라서 헬스장도 다녔다가<br>
+            줄넘기도 했다가 조깅도 했다가 이것저것하다가<br>
+            여러문제때문에 필라테스를 시작했어 ! <br>
+            나는 너무 만족해서 일주일에 2-3번씩 필라테스를 꼭 가는 것 같아<br>
+        </div>
+    </div>
+    
+    <div class=square id="two">
+        <div class =title>
+            🧶 HAND MADE 🧶
+        </div>
+
+        <div class =contents>
+            나는 취미가 생기면 하나만 파는 스타일이라서 금방 질리곤 해..<br>
+            그래서 취미로 뭐를 소개할까 고민하다가<br>
+            이번 겨울방학때 내가 푹 빠져있었던 취미가 있어서 소개할게 !!<br>
+            나는 평소 손을 가만히 놔두지 못해서 이것저것 만들곤 하는데<br>
+            이번에는 코바늘로 파우치,모자,가방 등을 만들었어<br>
+            역시나 지금은 질려서 안해 ..ㅎㅎ😜
+        </div>
+        <div class=img>
+            <img src="{% static '코바늘.jpg' %}" alt="" id="ko">
+        </div>
+    </div>
+
+
+    {% endblock %}
+
+
+</body>
+</html>

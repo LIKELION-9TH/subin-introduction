@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<style>
+p{
+  font-family: Noto Sans;
+  font-style: normal;
+  line-height: 33px;
+  
+
+}
+.category{
+    position: absolute;
+    width: 89px;
+    height: 86px;
+    left: 676px;
+    top: 220px;
+    
+    font-weight: bold;
+    line-height: 33px;
+    color:#004122;
+}
+.answer{
+    position: absolute;
+    width: 199px;
+    height: 200px;
+    left: 830px;
+    top: 220px;
+  
+    font-size: 15px;
+    color: #000000;
+}
+img{
+  position: absolute;
+  width: 213px;
+  height: 213px;
+  left: 289px;
+  top: 179px;
+
+}
+.visiter{
+  position: absolute;
+  width: 1230px;
+  height: 33px;
+  left: 124px;
+  top: 545px;
+
+  
+}
+#visit{
+  position: absolute;
+  height: 33px;
+  left: 124px;
+  top: 479px;
+  
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+}
+#content{
+  font-weight: bold;
+  color: #1e3a27;
+}
+
+
+#newvisiter{
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  left: 1260px;
+  top: 490px;
+  
+
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 33px;
+  text-align: center;
+
+  background-color: #4F6455;
+  border-radius: 28px;
+
+}
+a:link{
+  text-decoration-line: none;
+}
+#square{
+  position: absolute;
+  width: 1485px;
+  height: 500px;
+  left: 0px;
+  top: 450px;
+  
+  background: #ffffff;
+  border-radius: 30px;
+}
+#back{
+  position: absolute;
+  width: 1485px;
+  height: 500px;
+  left: 0px;
+  top: 75px;
+}
+
+
+</style>
+
+<body>
+
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<img src="{% static '배경.png' %}" alt="" id="back">
+<div id="square"></div>
+    <div class=category>
+      <p>이름
+          <br>
+          생년월일
+          <br>
+          학교
+          <br>
+          학과
+      </p>
+    </div>  
+
+    <div class=answer>
+      <p>홍수빈
+          <br>
+          2000.08.13
+          <br>
+          성신여자대학교
+          <br>
+          서비스·디자인공학과
+      </p>
+    </div>
+      <a href="{%url 'new'%}" style="color: white;" id="newvisiter">방명록 쓰기</a>
+  <p id="visit">방명록</p>
+  <div class=visiter>
+    {% for visit in visits%}
+      <p id="content">{{visit.name}}</p>
+      {{visit.id}}
+      {{visit.body}}<a href="{% url 'detail' visit.id %}" id="content">...more</a>
+      <hr>
+      
+    {% endfor %}
+  </div>
+
+
+  <img src="{% static '프로필사진.png' %}" alt="">
+
+{% endblock %}
+
+
+</body>

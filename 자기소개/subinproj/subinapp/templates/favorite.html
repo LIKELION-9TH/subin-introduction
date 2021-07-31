@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorite</title>
+</head>
+<style>
+p{
+    position: absolute;
+    width: 1100px;
+    height: 34px;
+        
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 25px;
+
+        
+    color: #000000;
+}
+#explain{
+    top: -60px;
+    left: 0px;
+    font-size: 15px;
+
+}
+
+#place{
+    left: 140px;
+    top: 130px;
+}
+#music{
+    left: 140px;
+    top: 670px;
+
+}
+.frame{
+    position: absolute;
+    top: -110px;
+
+}
+#one{
+    width: 500px;
+    left:900px;
+}
+#two{
+    width: 500px;
+    left:650px;
+
+}
+#three{
+    width: 500px;
+    left:150px;
+
+}
+#four{
+    width: 500px;
+    left:400px;
+
+}
+#five{
+    width: 500px;
+    left:-100px;
+
+}
+
+img{
+    position: absolute;
+    width: 200px;
+    top: 300px;
+    left: 140px;
+}
+#bada1{
+    left: 400px;
+}
+#bada2{
+    left: 650px;
+}
+#bada3{
+    left: 900px;
+}
+#bada4{
+    left: 1150px;
+}
+
+.line{
+    position: absolute;
+    width: 1200px;
+    height: 0px;
+    left: 145px;
+    top: 250px;
+    
+    border: 1.5px solid #A3B49D;
+    background-color: #A3B49D;
+}
+#musicline{
+    top: 790px;
+
+}
+.musics{
+    position: absolute;
+    top:530px;
+}
+#norae1{
+    width:250px;
+    left:50px;
+    margin-bottom: 50px;
+}
+#norae2{
+    width:250px;
+    left:370px;
+}
+#norae3{
+    width:250px;
+    left:685px;
+}
+#norae4{
+    width:250px;
+    left:1000px;
+}
+
+</style>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <p id="place">🏠PLACE</p>
+        <div class=line>
+            <p id="explain">나는 물을 진짜 좋아해 🌊<br>
+            들어가지 않고 바다 보러만 가기도 하는데 분기마다 한번씩은 가는 것 같아 !!
+            바다만보고 1시간도 넘게 시간 보낼 수 있어 보기만해도 힐링되는 기분..?ㅎ</p>
+        </div>
+            
+
+        <div class=img>
+                <img src="{% static '강릉가을바다.jpg' %}" alt="" >
+                <img src="{% static '강릉바다.jpg' %}" alt="" id="bada1">
+                <img src="{% static '강릉밤바다.jpg' %}" alt="" id="bada2">
+                <img src="{% static '바다.jpg' %}" alt="" id="bada3">
+                <img src="{% static '여수바다.jpg' %}" alt="" id="bada4">
+        </div>
+
+        <div class=frame>
+                <img src="{% static '폴라.png' %}" alt="" id="one" >
+                <img src="{% static '폴라.png' %}" alt="" id="two" >
+                <img src="{% static '폴라.png' %}" alt="" id="three">
+                <img src="{% static '폴라.png' %}" alt="" id="four">
+                <img src="{% static '폴라.png' %}" alt="" id="five">
+        </div>
+
+    <p id="music">🎵MUSIC</p>
+        <div class=line id="musicline">
+            <p id="explain">나는 노래듣는걸 진짜 좋아하는데 좋아하는 장르나 가수는 없고 한번 들어보고 계속 들을지 결정하는 편 !!<br>
+                그래서 내가 요즘 듣는 노래를 소개할게 ~ :-)</p>
+        </div>
+        <div class=musics >
+            <img src="{% static '노래1.png' %}" alt="" id="norae1" >
+            <img src="{% static '노래2.png' %}" alt="" id="norae2">
+            <img src="{% static '노래3.png' %}" alt="" id="norae3">
+            <img src="{% static '노래4.png' %}" alt="" id="norae4">
+
+        </div>
+
+
+
+    {% endblock %}
+</body>
+</html>

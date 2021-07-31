@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>newvisiter</title>
+</head>
+<style>
+
+.square{
+    position: absolute;
+    top:100px;
+    left:800px;
+    width: 500px;
+    height: 600px;
+    background: #F3F7F1;
+    border-radius: 28px;
+}
+    
+.newvisit{
+    position: absolute;
+    width: 366px;
+    height: 65px;
+    left: calc(50% - 366px/2 + 318px);
+    top: 140px;
+    
+    font-family: Noto Sans;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 65px;
+    text-align: center;
+    
+    color: #000000;
+}
+h6{
+    position: absolute;
+    width: 505px;
+    height: 71px;
+    left: calc(50% - 505px/2 + 314.5px);
+    top: 210px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    
+    color: #198754;
+    
+}
+.input{
+    position: absolute;
+    left: 900px;
+    top: 280px;
+    
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 33px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+    
+}
+img{
+    position: absolute;
+    width: 435px;
+    height: 582px;
+    top: 130px;
+    left: 150px;
+}
+button{
+    position: absolute;
+    top: 350px;
+    width: 300px;
+    background-color: #4F6455;
+
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    /* identical to box height */
+    
+    
+    color: #000000;
+}
+
+
+
+
+</style>
+<body>
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class=square></div>
+<div class=newvisit>
+    <p>‖ 방명록을 남겨주세요 ‖</p>
+</div>
+<h6>자신임을 밝혀도 좋고 안밝혀도 좋습니다.
+    <br>‘홍수빈’에게 하고싶은 말을 마구마구 남겨주세요 :-)</h6>
+
+<div class=input>
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%}
+    <p>이름</p>
+    <input type="text" name = "name" style="background-color: white; border : none; width:290px;"></p>
+    <p>내용</p>
+    <textarea name="body" id="" cols="38" rows="5" style="border : none;"></textarea>
+
+    <button type="submit" style="color: white; border-radius:25px; border : none; left:-5px;"> 전송</button>
+</form>
+</div>
+
+<img src="{% static 'bear.jpg' %}" alt="" >
+
+
+
+{% endblock %}
+
+</body>
+</html>
+
